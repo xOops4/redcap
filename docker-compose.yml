@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  redcap:
+    image: php:8.2-apache
+    container_name: redcap_app
+    volumes:
+      - ./html:/var/www/html
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    environment:
+      - REDCAP_DB_HOST=db
+      - REDCAP_DB_USER=redcap
+      - REDCAP_DB_PASS=Kenshin44++
+      - REDCAP_DB_NAME=redcap
+    restart: unless-stopped
+
+  db:
+    image: mariadb:10.11
+    container_name: redcap_db
+    environment:
+      - MYSQL_ROOT_PASSWORD=Kenshin44++
+      - MYSQL_DATABASE=redcap
+      - MYSQL_USER=redcap
+      - MYSQL_PASSWORD=Kenshin44++
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: unless-stopped
+
+volumes:
+  db_data:

@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d245e54b-6493-4657-8cdb-c5374308f675" name="Changes" comment="Merging updates from &quot;Merge commit 'afd74b603d870e619c9db0751e4377baf7dca042' into production&quot; commit into release.">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerConfigs">
+    <option name="configs">
+      <option value="$PROJECT_DIR$/classes/framework/dependencies/twig-3/composer.json" />
+    </option>
+  </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <interpreter name="Ubuntu" composer="composer" />
+    </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="testing" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;moorejr5&quot;
+  }
+}</component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="testing" />
+        <option value="production" />
+        <option value="release" />
+        <option value="release-LTS" />
+      </list>
+    </option>
+  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:vanderbilt-redcap/external-module-framework.git&quot;,
+    &quot;accountId&quot;: &quot;5304a105-e7bd-4a65-b142-d74011ee9ed1&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/composer.json" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="Ubuntu">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/johnkary/phpunit-speedtrap" />
+      <path value="$PROJECT_DIR$/vendor/dealerdirect/phpcodesniffer-composer-installer" />
+      <path value="$PROJECT_DIR$/vendor/felixfbecker/language-server-protocol" />
+      <path value="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/amphp/amp" />
+      <path value="$PROJECT_DIR$/vendor/amphp/byte-stream" />
+      <path value="$PROJECT_DIR$/vendor/phpcsstandards/phpcsutils" />
+      <path value="$PROJECT_DIR$/vendor/spatie/array-to-xml" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/Controllers" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/MultiLanguage" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/DataEntry" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/.github" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/Design" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/SendIt" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/MyCap" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/ProjectSetup" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/Libraries" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/Logging" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/Views" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/twoFA" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/Classes" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/AI" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/Messenger" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/DataQuality" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/ControlCenter" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/Resources" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/ToDoList" />
+      <path value="$PROJECT_DIR$/vendor/phpcompatibility/php-compatibility" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/UserRights" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/Help" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/Profile" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/Tests" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/Config" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/MyCapMobileApp" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/CDIS" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/vendor" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/Randomization" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/PubMatch" />
+      <path value="$PROJECT_DIR$/vendor/fidry/cpu-core-counter" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/LanguageUpdater" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/MobileApp" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/ExternalModules" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/Home" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/Locking" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/DataExport" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/ExternalLinks" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/DynamicDataPull" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/ProjectGeneral" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/Plugins" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/SharedLibrary" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/Surveys" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/Calendar" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/Graphical" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/.git" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/UnitTests" />
+      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/API" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/Authentication" />
+      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/vimeo/psalm" />
+      <path value="$PROJECT_DIR$/vendor/phpstan/phpdoc-parser" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/netresearch/jsonmapper" />
+      <path value="$PROJECT_DIR$/classes/framework/dependencies/twig-3/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/classes/framework/dependencies/twig-3/vendor/symfony/polyfill-php81" />
+      <path value="$PROJECT_DIR$/classes/framework/dependencies/twig-3/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/classes/framework/dependencies/twig-3/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/classes/framework/dependencies/twig-3/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/classes/framework/dependencies/twig-3/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/.idea" />
+      <path value="$PROJECT_DIR$/vendor/clue/ndjson-react" />
+      <path value="$PROJECT_DIR$/vendor/friendsofphp/php-cs-fixer" />
+      <path value="$PROJECT_DIR$/vendor/react/cache" />
+      <path value="$PROJECT_DIR$/vendor/react/dns" />
+      <path value="$PROJECT_DIR$/vendor/react/socket" />
+      <path value="$PROJECT_DIR$/vendor/react/event-loop" />
+      <path value="$PROJECT_DIR$/vendor/react/child-process" />
+      <path value="$PROJECT_DIR$/vendor/react/stream" />
+      <path value="$PROJECT_DIR$/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/vendor/evenement/evenement" />
+      <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php81" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/symfony/stopwatch" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php84" />
+      <path value="$PROJECT_DIR$/vendor/amphp/dns" />
+      <path value="$PROJECT_DIR$/vendor/amphp/parallel" />
+      <path value="$PROJECT_DIR$/vendor/amphp/parser" />
+      <path value="$PROJECT_DIR$/vendor/amphp/cache" />
+      <path value="$PROJECT_DIR$/vendor/amphp/process" />
+      <path value="$PROJECT_DIR$/vendor/amphp/serialization" />
+      <path value="$PROJECT_DIR$/vendor/amphp/pipeline" />
+      <path value="$PROJECT_DIR$/vendor/amphp/sync" />
+      <path value="$PROJECT_DIR$/vendor/amphp/socket" />
+      <path value="$PROJECT_DIR$/vendor/danog/advanced-json-rpc" />
+      <path value="$PROJECT_DIR$/vendor/league/uri-interfaces" />
+      <path value="$PROJECT_DIR$/vendor/league/uri" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/kelunik/certificate" />
+      <path value="$PROJECT_DIR$/vendor/redcap-source/Rewards" />
+      <path value="$PROJECT_DIR$/vendor/revolt/event-loop" />
+      <path value="$PROJECT_DIR$/vendor/daverandom/libdns" />
+    </include_path>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2xyClbSxZuNCjHt69mhgDmZnaFr" />
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHELLCHECK.PATH": "I do mind",
+    "git-widget-placeholder": "no__markdown__formatting",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "//wsl.localhost/Ubuntu/var/www/html/redcap/external_modules",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Markdown",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml" scope="XML" use_alternative_configuration_file="true" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-PS-251.23774.436" />
+        <option value="bundled-php-predefined-a98d8de5180a-aaeaa8632555-com.jetbrains.php.sharedIndexes-PS-251.23774.436" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d245e54b-6493-4657-8cdb-c5374308f675" name="Changes" comment="" />
+      <created>1748901078114</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1748901078114</updated>
+      <workItem from="1748901079246" duration="3104000" />
+      <workItem from="1748980080520" duration="62000" />
+      <workItem from="1748980160474" duration="10872000" />
+      <workItem from="1749792455941" duration="1249000" />
+      <workItem from="1749793771175" duration="3415000" />
+      <workItem from="1750086476352" duration="4057000" />
+      <workItem from="1750101951162" duration="1855000" />
+      <workItem from="1750108614659" duration="8641000" />
+      <workItem from="1750278005280" duration="16786000" />
+      <workItem from="1750801779671" duration="7610000" />
+      <workItem from="1751563719933" duration="3150000" />
+      <workItem from="1751574090602" duration="2894000" />
+      <workItem from="1751914507848" duration="876000" />
+      <workItem from="1751923617553" duration="9233000" />
+      <workItem from="1752219780020" duration="2104000" />
+      <workItem from="1752869499410" duration="1523000" />
+      <workItem from="1754423731249" duration="2092000" />
+      <workItem from="1755868724814" duration="6500000" />
+      <workItem from="1756236425787" duration="691000" />
+    </task>
+    <task id="LOCAL-00001" summary="Adjustment from phpunit cleanups to construct/destruct class methods. Correctly this time.">
+      <option name="closed" value="true" />
+      <created>1749045762395</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1749045762395</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Corrections to make tests pass without errors.">
+      <option name="closed" value="true" />
+      <created>1749794707948</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1749794707948</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Removal of .idea folder from gitignore.">
+      <option name="closed" value="true" />
+      <created>1750108352050</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1750108352050</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Adjustment specific for git environment to make default user a non-admin for our tests.">
+      <option name="closed" value="true" />
+      <created>1750779356442</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1750779356442</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Example module wasn't being enabled on the REDCap install.">
+      <option name="closed" value="true" />
+      <created>1750783486896</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1750783486896</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Better debugging for failure to add user API rights.">
+      <option name="closed" value="true" />
+      <created>1750802588212</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1750802588212</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Better debugging for failure to add user API rights.">
+      <option name="closed" value="true" />
+      <created>1750802847724</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1750802847724</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Better debugging for failure to add user API rights.">
+      <option name="closed" value="true" />
+      <created>1750803822376</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1750803822376</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Better debugging for failure to add user API rights.">
+      <option name="closed" value="true" />
+      <created>1751910892025</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1751910892025</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Framework API methods were removed incorrectly.">
+      <option name="closed" value="true" />
+      <created>1751947390045</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1751947390045</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Merging updates from &quot;Merge commit 'afd74b603d870e619c9db0751e4377baf7dca042' into production&quot; commit into release.">
+      <option name="closed" value="true" />
+      <created>1752220805283</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1752220805283</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Merging updates from &quot;Merge commit 'afd74b603d870e619c9db0751e4377baf7dca042' into production&quot; commit into release.">
+      <option name="closed" value="true" />
+      <created>1752221179332</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1752221179332</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Merging updates from &quot;Merge commit 'afd74b603d870e619c9db0751e4377baf7dca042' into production&quot; commit into release.">
+      <option name="closed" value="true" />
+      <created>1752221282886</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1752221282886</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Adjustment from phpunit cleanups to construct/destruct class methods. Correctly this time." />
+    <MESSAGE value="Corrections to make tests pass without errors." />
+    <MESSAGE value="Removal of .idea folder from gitignore." />
+    <MESSAGE value="Adjustment specific for git environment to make default user a non-admin for our tests." />
+    <MESSAGE value="Example module wasn't being enabled on the REDCap install." />
+    <MESSAGE value="Better debugging for failure to add user API rights." />
+    <MESSAGE value="Framework API methods were removed incorrectly." />
+    <MESSAGE value="Merging updates from &quot;Merge commit 'afd74b603d870e619c9db0751e4377baf7dca042' into production&quot; commit into release." />
+    <option name="LAST_COMMIT_MESSAGE" value="Merging updates from &quot;Merge commit 'afd74b603d870e619c9db0751e4377baf7dca042' into production&quot; commit into release." />
+  </component>
+</project>

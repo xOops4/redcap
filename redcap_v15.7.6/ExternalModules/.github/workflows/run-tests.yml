@@ -1,0 +1,74 @@
+name: Run Tests
+on:
+  pull_request:
+  push:
+    branches:
+      - 'testing'
+      - 'production'
+      - 'release'
+      - 'release-LTS'
+jobs:
+  Run-Tests:
+    if: github.repository_owner == 'vanderbilt-redcap'
+    runs-on: ubuntu-22.04
+    env:
+      MYSQL_REDCAP_CI_HOSTNAME: 127.0.0.1:8888
+      MYSQL_REDCAP_CI_DB: redcap
+      MYSQL_REDCAP_CI_USERNAME: root
+      MYSQL_REDCAP_CI_PASSWORD: password
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: false
+          MYSQL_ROOT_PASSWORD: password
+          MYSQL_DATABASE: redcap
+        ports:
+          - '8888:3306'
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+    strategy:
+      max-parallel: 2
+      matrix:
+        php-versions: ['8.0.2', '8.4']
+    steps:
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-versions }}
+      - name: Checkout REDCap core
+        uses: actions/checkout@v3
+        with:
+          repository: vanderbilt-redcap/redcap
+          ref: master
+          ssh-key: ${{ secrets.REDCAP_CORE_DEPLOY_KEY }}
+          path: redcap
+      - name: Detect REDCap Version
+        run: echo "REDCAP_CI_DIR=redcap_v99.99.99" >> $GITHUB_ENV
+      - name: Install REDCap
+        run: |
+          mkdir edocs
+          mkdir temp
+          mv redcap $REDCAP_CI_DIR
+          php $REDCAP_CI_DIR/install.php
+      - name: Checkout the External Module Framework
+        uses: actions/checkout@v3
+        with:
+          path: external_modules
+      - name: Setup Apache
+        run: |
+          docker run -d \
+            -e MYSQL_REDCAP_CI_HOSTNAME=172.17.0.1:8888 \
+            -e MYSQL_REDCAP_CI_USERNAME=$MYSQL_REDCAP_CI_USERNAME \
+            -e MYSQL_REDCAP_CI_PASSWORD=$MYSQL_REDCAP_CI_PASSWORD \
+            -e MYSQL_REDCAP_CI_DB=$MYSQL_REDCAP_CI_DB \
+            -p 80:80 --rm --name apache thecodingmachine/php:${{ matrix.php-versions }}-v4-apache
+      - name: run-tests.sh
+        run: |
+          cp -a $REDCAP_CI_DIR/Resources/install_files/redcap/* .
+          cp -a $REDCAP_CI_DIR/Resources/nonversioned_files/* .
+          cd external_modules
+          cp .github/workflows/database.php ../
+          docker cp ../. apache:/var/www/html/.
+          docker exec apache sh -c "sudo chmod -R 755 /var/www/html"
+          php tests/init-github-action.php
+          ./run-tests.sh
