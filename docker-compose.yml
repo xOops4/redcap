@@ -17,17 +17,5 @@ services:
       - REDCAP_DB_NAME=redcap
     restart: unless-stopped
 
-  db:
-    image: mariadb:10.11
-    container_name: redcap_db
-    environment:
-      - MYSQL_ROOT_PASSWORD=Kenshin44++
-      - MYSQL_DATABASE=redcap
-      - MYSQL_USER=redcap
-      - MYSQL_PASSWORD=Kenshin44++
-    volumes:
-      - db_data:/var/lib/mysql
-    restart: unless-stopped
-
 volumes:
   db_data:
