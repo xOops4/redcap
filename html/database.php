@@ -13,10 +13,10 @@ $log_all_errors = FALSE;
 // Replace the values inside the single quotes below with the values for your MySQL configuration. 
 // If not using the default port 3306, then append a colon and port number to the hostname (e.g. $hostname = 'example.com:3307';).
 
-$hostname   = '';	//your_mysql_host_name
-$db     	= ''; 	//your_mysql_db_name
-$username   = ''; 	//your_mysql_db_username
-$password   = ''; 	//your_mysql_db_password
+$hostname   = 'db';     //your_mysql_host_name
+$db         = 'redcap';     //your_mysql_db_name
+$username   = 'redcap';         //your_mysql_db_username
+$password   = 'Kenshin44';      //your_mysql_db_password
 
 // You may optionally utilize a database connection over SSL/TLS for improved security. To do so, at minimum
 // you must provide the path of the key file, the certificate file, and certificate authority file.
@@ -39,7 +39,7 @@ $db_ssl_verify_server_cert = false; // Set to TRUE to force the database connect
 // Add a random value for the $salt variable below, preferably alpha-numeric with 8 characters or more. This value wll be 
 // used for data de-identification hashing for data exports. Do NOT change this value once it has been initially set.
 
-$salt = '';
+$salt = 'ml<kdsuf,qzeohgc,qsojfqzfgjqos^`fksdfq';
 
 
 //********************************************************************************************************************
