@@ -3,9 +3,7 @@ services:
     build: .  # Utilise le Dockerfile local
     container_name: redcap_app
     volumes:
-      - ./html:/var/www/html
-    ports:
-      - "80:80"
+      - ./html:/var/www/redcap/html
     depends_on:
       - db
     environment:
