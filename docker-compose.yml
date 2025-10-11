@@ -1,6 +1,8 @@
+version: "3.9"
+
 services:
   redcap:
-    build: .  # Utilise le Dockerfile local
+    build: .
     container_name: redcap_app
     volumes:
       - ./html:/var/www/html
@@ -13,6 +15,8 @@ services:
       - REDCAP_DB_USER=redcap
       - REDCAP_DB_PASS=Kenshin44
       - REDCAP_DB_NAME=redcap
+    networks:
+      - redcap-net
     restart: unless-stopped
 
   db:
@@ -25,7 +29,13 @@ services:
       - MYSQL_PASSWORD=Kenshin44
     volumes:
       - db_data:/var/lib/mysql
+    networks:
+      - redcap-net
     restart: unless-stopped
 
 volumes:
   db_data:
+
+networks:
+  redcap-net:
+    external: true
