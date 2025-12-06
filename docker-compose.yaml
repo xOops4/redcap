@@ -1,0 +1,40 @@
+services:
+  nginx:
+    build: ./nginx/
+    container_name: nginx-container
+    ports:
+      - '8082:80'
+    volumes:
+      - ./html/:/var/www/html/
+      - ./php-config/php.ini:/usr/local/etc/php/conf.d/custom.ini
+    depends_on:
+      - php
+    networks:
+      - app-network
+  php:
+    build: ./html/
+    container_name: php-container
+    expose:
+      - '9000'
+    volumes:
+      - ./html/:/var/www/html/
+    networks:
+      - app-network
+  db:
+    image: mariadb
+    container_name: db-container
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./mariadb_config/:/etc/mysql/conf.d/
+    networks:
+      - app-network
+    environment:
+      MYSQL_ROOT_PASSWORD: redcap
+      MYSQL_DATABASE: redcap
+      MARIADB_ROOT_PASSWORD: redcap
+volumes:
+  mysql-data:
+networks:
+  app-network:
+    driver: bridge
+

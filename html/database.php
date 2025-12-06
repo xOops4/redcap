@@ -16,7 +16,7 @@ $log_all_errors = FALSE;
 $hostname   = 'db';     //your_mysql_host_name
 $db         = 'redcap';     //your_mysql_db_name
 $username   = 'redcap';         //your_mysql_db_username
-$password   = 'Kenshin44';      //your_mysql_db_password
+$password   = 'Kenshin44++';      //your_mysql_db_password
 
 // You may optionally utilize a database connection over SSL/TLS for improved security. To do so, at minimum
 // you must provide the path of the key file, the certificate file, and certificate authority file.
