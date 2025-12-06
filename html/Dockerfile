@@ -1,32 +1,32 @@
-FROM php:8.1-fpm
+FROM php:8.3-fpm
 
-# Install system dependencies
+# Install dependencies and extensions
 RUN apt-get update && apt-get install -y \
     libpng-dev \
     libjpeg-dev \
     libfreetype6-dev \
     libzip-dev \
-    zip \
-    unzip \
-    curl \
-    libxml2-dev \
     libonig-dev \
+    libxml2-dev \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install -j$(nproc) \
-        gd \
-        pdo \
-        pdo_mysql \
-        zip \
-        mbstring \
-        xml \
-        intl \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    && docker-php-ext-install \
+    mysqli \
+    pdo \
+    pdo_mysql \
+    gd \
+    zip \
+    mbstring \
+    exif \
+    pcntl \
+    bcmath \
+    xml
 
-# Install Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+# Installer ImageMagick
+# RUN apt-get update && apt-get install -y imagemagick
 
-# Set working directory to html folder
+# Installer l'extension PHP Imagick
+# RUN pecl install imagick && docker-php-ext-enable imagick
+
 WORKDIR /var/www/html
 
 # Copy your HTML folder content (si vous copiez depuis le build)
@@ -36,8 +36,8 @@ WORKDIR /var/www/html
 RUN chown -R www-data:www-data /var/www \
     && chmod -R 755 /var/www/html
 
-# Switch to non-root user
-USER www-data
+# Enable opcache for better performance
+RUN docker-php-ext-enable opcache
 
-EXPOSE 9000
-CMD ["php-fpm"]
+# Clean up
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
