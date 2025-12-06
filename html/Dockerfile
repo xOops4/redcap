@@ -27,14 +27,16 @@ RUN apt-get update && apt-get install -y \
 # Installer l'extension PHP Imagick
 # RUN pecl install imagick && docker-php-ext-enable imagick
 
-WORKDIR /var/www/html
-
 # Copy your HTML folder content (si vous copiez depuis le build)
 # COPY html/ /var/www/html/
 
-# Set proper permissions
-RUN chown -R www-data:www-data /var/www \
-    && chmod -R 755 /var/www/html
+# Créer le répertoire et définir les permissions AVANT de copier
+RUN mkdir -p /var/www/html \
+    && chown -R www-data:www-data /var/www \
+    && chmod -R 755 /var/www
+
+# Définir le répertoire de travail
+WORKDIR /var/www/html
 
 # Enable opcache for better performance
 RUN docker-php-ext-enable opcache
