@@ -2,15 +2,37 @@ services:
   nginx:
     build: ./nginx/
     container_name: nginx-container
-    ports:
-      - '8082:80'
     volumes:
       - ./html/:/var/www/html/
       - ./php-config/php.ini:/usr/local/etc/php/conf.d/custom.ini
-    depends_on:
-      - php
-    networks:
-      - app-network
+  labels:
+      # Active Traefik pour ce conteneur
+    - "traefik.enable=true"
+      
+      # Nom du Host (Votre sous-domaine)
+    - "traefik.http.routers.redcap.rule=Host(`redcap.medicapp.icu`)"
+      
+      # Redirection HTTP (Port 80) vers HTTPS (Certificat Let's Encrypt)
+    - "traefik.http.routers.redcap.entrypoints=web" # web est le port 80 de Traefik
+    - "traefik.http.routers.redcap.middlewares=redcap-redirect-to-https"
+      
+      # Redirection vers HTTPS
+    - "traefik.http.middlewares.redcap-redirect-to-https.redirectscheme.scheme=https"
+
+      # Configuration HTTPS (Port 443)
+    - "traefik.http.routers.redcap-secure.entrypoints=websecure" # websecure est le port 443 de Traefik
+    - "traefik.http.routers.redcap-secure.rule=Host(`redcap.medicapp.icu`)"
+    - "traefik.http.routers.redcap-secure.tls=true"
+      
+      # Service Traefik (où diriger le trafic)
+    - "traefik.http.routers.redcap-secure.service=redcap-nginx-service"
+    - "traefik.http.services.redcap-nginx-service.loadbalancer.server.port=80" # Le port interne de Nginx
+
+      # Traefik gère automatiquement le certificat (certresolver)
+    - "traefik.http.routers.redcap-secure.tls.certresolver=letsencrypt"
+  networks:
+    - app-network
+    - dockploy_proxy # ⬅️ ASSUREZ-VOUS QUE C'EST LE BON NOM
   
   
   php:
@@ -54,7 +76,7 @@ volumes:
   mysql-data:
   certbot-etc:
   certbot-var:
-  
+
 networks:
   app-network:
     driver: bridge
