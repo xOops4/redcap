@@ -35,8 +35,26 @@ services:
       MYSQL_PASSWORD: redcap
       MYSQL_DATABASE: redcap
       MARIADB_ROOT_PASSWORD: redcap
+
+
+  certbot:
+    image: certbot/certbot
+    container_name: certbot-container
+    volumes:
+      # Utilise le même volume que Nginx pour stocker les certificats
+      - certbot-etc:/etc/letsencrypt
+      # Utilise le même volume que Nginx pour la vérification du domaine (Challenge HTTP)
+      - certbot-var:/var/www/certbot
+    # Pour que ce service s'arrête immédiatement après l'exécution du certificat
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do sleep 1d & wait; done;'"
+    networks:
+      - app-network
+
 volumes:
   mysql-data:
+  certbot-etc:
+  certbot-var:
+  
 networks:
   app-network:
     driver: bridge
