@@ -38,7 +38,7 @@ services:
       
     networks:
       - app-network
-      - dockploy_proxy # ⬅️ Nom du réseau de votre Traefik/Dockploy
+      - dokploy-network # ⬅️ Nom du réseau de votre Traefik/Dockploy
   
   
   php:
