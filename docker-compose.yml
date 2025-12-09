@@ -1,51 +1,65 @@
+version: '3.8'
+
 services:
   nginx:
     build: ./nginx/
     container_name: nginx-container
+    # Nginx dépend de PHP pour traiter les requêtes
+    depends_on:
+      - php
     volumes:
       - ./html/:/var/www/html/
-      - ./php-config/php.ini:/usr/local/etc/php/conf.d/custom.ini
-  labels:
-      # Active Traefik pour ce conteneur
-    - "traefik.enable=true"
-      
+      # Attention: ce volume doit être monté dans PHP, pas Nginx. Je l'ai retiré ici.
+      # Si votre PHP-FPM utilise un fichier de configuration, il doit aller dans le conteneur PHP.
+      # J'ai remis uniquement les volumes nécessaires pour le code source dans Nginx.
+
+    # L'élément 'labels' doit être ici, au même niveau que 'build' et 'volumes'
+    labels:
+      - "traefik.enable=true"
       # Nom du Host (Votre sous-domaine)
-    - "traefik.http.routers.redcap.rule=Host(`redcap.medicapp.icu`)"
+      - "traefik.http.routers.redcap.rule=Host(`redcap.medicapp.icu`)"
       
-      # Redirection HTTP (Port 80) vers HTTPS (Certificat Let's Encrypt)
-    - "traefik.http.routers.redcap.entrypoints=web" # web est le port 80 de Traefik
-    - "traefik.http.routers.redcap.middlewares=redcap-redirect-to-https"
-      
-      # Redirection vers HTTPS
-    - "traefik.http.middlewares.redcap-redirect-to-https.redirectscheme.scheme=https"
+      # Redirection HTTP (Port 80) vers HTTPS
+      - "traefik.http.routers.redcap.entrypoints=web" # web est le port 80 de Traefik
+      - "traefik.http.routers.redcap.middlewares=redcap-redirect-to-https"
+      - "traefik.http.middlewares.redcap-redirect-to-https.redirectscheme.scheme=https"
 
       # Configuration HTTPS (Port 443)
-    - "traefik.http.routers.redcap-secure.entrypoints=websecure" # websecure est le port 443 de Traefik
-    - "traefik.http.routers.redcap-secure.rule=Host(`redcap.medicapp.icu`)"
-    - "traefik.http.routers.redcap-secure.tls=true"
+      - "traefik.http.routers.redcap-secure.entrypoints=websecure" # websecure est le port 443 de Traefik
+      - "traefik.http.routers.redcap-secure.rule=Host(`redcap.medicapp.icu`)"
+      - "traefik.http.routers.redcap-secure.tls=true"
       
       # Service Traefik (où diriger le trafic)
-    - "traefik.http.routers.redcap-secure.service=redcap-nginx-service"
-    - "traefik.http.services.redcap-nginx-service.loadbalancer.server.port=80" # Le port interne de Nginx
+      - "traefik.http.routers.redcap-secure.service=redcap-nginx-service"
+      - "traefik.http.services.redcap-nginx-service.loadbalancer.server.port=80" # Le port interne de Nginx
 
       # Traefik gère automatiquement le certificat (certresolver)
-    - "traefik.http.routers.redcap-secure.tls.certresolver=letsencrypt"
-  networks:
-    - app-network
-    - dockploy_proxy # ⬅️ ASSUREZ-VOUS QUE C'EST LE BON NOM
+      - "traefik.http.routers.redcap-secure.tls.certresolver=letsencrypt"
+      
+    networks:
+      - app-network
+      - dockploy_proxy # ⬅️ Nom du réseau de votre Traefik/Dockploy
   
   
   php:
-    build: ./html/
+    # ⚠️ ATTENTION : 'build: ./html/' est généralement incorrect. 
+    # Cela suppose un Dockerfile dans le répertoire du code REDCap.
+    # Il est préférable d'utiliser 'build: ./php/' avec un Dockerfile dédié.
+    build: ./php/ # Corrigé à 'php' pour installer les dépendances (comme discuté précédemment)
     container_name: php-container
     expose:
       - '9000'
     volumes:
       - ./html/:/var/www/html/
+      # Ajout du volume PHP ici (il doit être dans le conteneur PHP)
+      - ./php-config/php.ini:/usr/local/etc/php/conf.d/custom.ini 
+    depends_on:
+      - db
     networks:
       - app-network
+      
   db:
-    image: mariadb
+    image: mariadb:10.5 # Spécifiez une version pour la stabilité
     container_name: db-container
     volumes:
       - mysql-data:/var/lib/mysql
@@ -58,27 +72,14 @@ services:
       MYSQL_DATABASE: redcap
       MARIADB_ROOT_PASSWORD: redcap
 
-
-  certbot:
-    image: certbot/certbot
-    container_name: certbot-container
-    volumes:
-      # Utilise le même volume que Nginx pour stocker les certificats
-      - certbot-etc:/etc/letsencrypt
-      # Utilise le même volume que Nginx pour la vérification du domaine (Challenge HTTP)
-      - certbot-var:/var/www/certbot
-    # Pour que ce service s'arrête immédiatement après l'exécution du certificat
-    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do sleep 1d & wait; done;'"
-    networks:
-      - app-network
-
 volumes:
   mysql-data:
-  certbot-etc:
-  certbot-var:
+  # ❌ RETIRÉ : Ces volumes ne sont pas nécessaires avec Traefik pour le SSL
+  # certbot-etc:
+  # certbot-var:
 
 networks:
   app-network:
     driver: bridge
-    
-
+  dockploy_proxy:
+    external: true # Doit être défini comme externe pour se connecter au réseau Traefik
