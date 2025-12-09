@@ -81,5 +81,5 @@ volumes:
 networks:
   app-network:
     driver: bridge
-  dockploy_proxy:
+  dokploy-network:
     external: true # Doit être défini comme externe pour se connecter au réseau Traefik
